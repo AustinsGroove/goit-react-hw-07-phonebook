@@ -1,20 +1,20 @@
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'store/sliceContacts/sliceContacts';
+import { deleteContactThunk } from 'store/sliceContacts/thunks';
 import Wrapper from './Contact.styled';
 
-const Contact = ({ name, number, id }) => {
+const Contact = ({ name, phone, id }) => {
   const dispatch = useDispatch();
-  const removeContactHandler = () => {
-    dispatch(removeContact(id));
+  const deleteContactHandler = () => {
+    dispatch(deleteContactThunk(id));
   };
 
   return (
     <Wrapper>
-      <p>{name}:</p>
-      <p>{number}</p>
-      <button type="button" onClick={removeContactHandler}>
+      <button type="button" onClick={deleteContactHandler}>
         Delete
       </button>
+      <p>{name}:</p>
+      <p>{phone}</p>
     </Wrapper>
   );
 };

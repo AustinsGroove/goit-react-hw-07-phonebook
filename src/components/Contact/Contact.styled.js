@@ -7,7 +7,7 @@ const Wrapper = styled('div')(() => {
     borderRadius: 10,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     width: '100%',
     gap: 10,
     p: {
